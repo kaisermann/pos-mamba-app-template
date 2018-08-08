@@ -1,5 +1,28 @@
 <AppBarTitle label="Home" />
 
+{$_.upper('picpay')}
+<br>
+{$_.upper('NO_PAPER.title')}
+<br>
+{$_('NO_PAPER.message')}
+<br>
+{$_('array[0]')}
+<br>
+<br>
+<br>
+tenho dinheiros: <br>
+<input type="number" bind:value="dinheiros" />
+<input type="text" bind:value="name" />
+
+{$_.plural('real', dinheiros || 0)}
+
+{$_('hello', [name])}
+
+<br>
+<br>
+<button on:click="$fire('locale', 'pt-br')">{$_.capital('portuguese', null, 'pt-br')}</button>
+<button on:click="$fire('locale', 'en-us')">{$_.lower('english', null, 'en-us')}</button>
+
 <script>
   import { AppBarTitle } from '@mambasdk/appbar';
 
@@ -8,7 +31,10 @@
       AppBarTitle,
     },
     data() {
-      return {};
+      return {
+        dinheiros: 0,
+        name: ''
+      };
     },
     methods: {},
   };

@@ -9,3 +9,7 @@ new App({
   target: document.getElementById('app-root'),
   store,
 });
+
+if (__DEV__) {
+  window.MambaStore = store;
+}

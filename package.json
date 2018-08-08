@@ -2,14 +2,15 @@
   "name": "mamba-app-template",
   "version": "1.0.0-alpha",
   "description": "Starter template for Mamba Applications.",
+  "repository": "https://github.com/stone-payments/pos-mamba-app-template.git",
   "author": "Stone Payments - Mamba Team",
   "contributors": [
     "Christian Kaisermann <christian.kaisermann@stone.com.br>"
   ],
   "license": "Apache-2.0",
   "engines": {
-    "node": ">= 8",
-    "npm": ">= 5",
+    "node": ">= 8.10.0",
+    "npm": ">= 5.6.0",
     "yarn": ">= 1.7"
   },
   "scripts": {
@@ -22,8 +23,6 @@
     "build-browser:analyze": "cross-env NODE_ENV=production webpack --config ./node_modules/@mambasdk/webpack/config.analyzer.js",
     "build-pos": "cross-env NODE_ENV=production APP_ENV=pos webpack --config ./node_modules/@mambasdk/webpack/config.build.js",
     "build-pos:dev": "cross-env APP_ENV=pos webpack --config ./node_modules/@mambasdk/webpack/config.build.js",
-    "test": "jest --coverage",
-    "test:watch": "yarn test --watch",
     "lint": "yarn lint:js; yarn lint:css;",
     "lint:js": "eslint *.js \"{src,test,webpack}/**/*.{js,html,svelte}\"",
     "lint:css": "stylelint --custom-syntax \"postcss-html\" \"src/**/*.{html,svelte,css,pcss}\"",
@@ -54,21 +53,19 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.56",
+    "@babel/core": "^7.0.0-rc.0",
     "@mambasdk/cli": "^0.0.2",
     "@mambasdk/configs": "^0.0.7",
     "@mambasdk/webpack": "^0.0.8",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.4.2",
     "cross-env": "^5.2.0",
     "eslint": "^5.3.0",
     "husky": "^0.15.0-rc.13",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^23.4.2",
     "lint-staged": "^7.2.0",
     "npm-check-updates": "^2.14.2",
     "postcss": "^7.0.2",
-    "prettier": "^1.14.1",
+    "prettier": "^1.14.2",
     "quickenv": "^0.0.5",
     "stylelint": "^9.4.0",
     "svelte-preprocess": "^2.2.3",
@@ -85,6 +82,7 @@
     "@mambasdk/store": "^0.0.1",
     "@mambasdk/styles": "^0.0.1",
     "svelte": "^2.9.11",
+    "svelte-i18n": "^0.0.3",
     "svelte-routing": "^0.4.2"
   }
 }
