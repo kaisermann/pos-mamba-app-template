@@ -1,0 +1,12 @@
+image: node:8
+
+cache:
+  paths:
+    - node_modules/
+
+build:
+  before_script:
+    - npm install -g @mamba/cli
+    - npm install
+  script: mamba app build
+
